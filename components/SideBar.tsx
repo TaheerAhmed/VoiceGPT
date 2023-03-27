@@ -1,20 +1,24 @@
 "use client";
 
-import { useSession ,signOut} from "next-auth/react";
+import { useSession, signOut } from "next-auth/react";
 import { collection, orderBy } from "firebase/firestore";
 import { db } from "@/firebase";
 import React from "react";
 import NewChat from "./NewChat";
 import { ArrowLeftOnRectangleIcon } from "@heroicons/react/24/solid";
-import {useCollection} from 'react-firebase-hooks/firestore'
+import { useCollection } from "react-firebase-hooks/firestore";
 import { collectionGroup } from "firebase/firestore";
 import { query } from "firebase/firestore";
 import ChatRow from "../components/ChatRow";
 const SideBar = () => {
   const { data: session } = useSession();
-const [chats,loading,error]=useCollection(
-session &&query(collection(db,'users',session?.user?.email!,'chats'),orderBy("createdAt","asc"))
-)
+  const [chats, loading, error] = useCollection(
+    session &&
+      query(
+        collection(db, "users", session?.user?.email!, "chats"),
+        orderBy("createdAt", "asc")
+      )
+  );
   return (
     <div className="p-2 flex flex-col h-screen text-white">
       <div className="flex-1">
@@ -24,8 +28,11 @@ session &&query(collection(db,'users',session?.user?.email!,'chats'),orderBy("cr
           <div>{/* modelSelection */}</div>
 
           {/* map through the chats */}
-          <div className="mt-5">{chats?.docs.map((chat) => (<ChatRow key={chat.id} id={chat.id} />))}</div>
-          
+          <div className="mt-5">
+            {chats?.docs.map((chat) => (
+              <ChatRow key={chat.id} id={chat.id} />
+            ))}
+          </div>
         </div>
       </div>
       {session && (
@@ -38,11 +45,13 @@ session &&query(collection(db,'users',session?.user?.email!,'chats'),orderBy("cr
             alt="profile pic"
             className="rounded-full h-12 w-12 cursor-pointer mx-auto"
           />
-          <div className='border-gray-700 border  chatRow text-white' onClick={()=>signOut()}>
-            <ArrowLeftOnRectangleIcon className='h-4 w-4' />
-            <p>
-              Logout
-            </p></div>
+          <div
+            className="border-gray-700 border  chatRow text-white"
+            onClick={() => signOut()}
+          >
+            <ArrowLeftOnRectangleIcon className="h-4 w-4" />
+            <p>Logout</p>
+          </div>
         </div>
       )}
     </div>

@@ -1,5 +1,5 @@
-import {getApp,getApps,initializeApp} from 'firebase/app'
-import {getFirestore} from 'firebase/firestore'
+import { getApp, getApps, initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
 
 // Import the functions you need from the SDKs you need
 
@@ -9,7 +9,6 @@ import { getAnalytics } from "firebase/analytics";
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-
 
 //change this firebaseConfig with your own fireBaseConfig
 const firebaseConfig = {
@@ -23,8 +22,8 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = getApps().length?getApp():initializeApp(firebaseConfig)
+const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
 
-const db=getFirestore(app)
+const db = getFirestore(app);
 
-export {db}
+export { db };

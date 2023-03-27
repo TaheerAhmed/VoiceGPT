@@ -11,9 +11,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'gray-white': '#f7f7f8'
-      }
+        "gray-white": "#f7f7f8",
+      },
     },
   },
   plugins: [],
-}
+};
