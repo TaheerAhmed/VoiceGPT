@@ -1,7 +1,6 @@
-import query from "../../lib/queryAPI";
+import query from '../../lib/queryAPI';
 import type { NextApiRequest, NextApiResponse } from "next";
 import admin from "firebase-admin";
-import logo from "../../public/logo.png";
 import { adminDb } from "@/firebaseAdmin";
 type Data = {
   answer: string;
@@ -31,7 +30,7 @@ export default async function handler(
       _id: "VoiceGPT",
       name: "VoiceGPT",
       avatar:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXWltIVwM1YEB6FYvjPEV63V7gtDJPtRgr3-1Bu7el&s",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/1024px-ChatGPT_logo.svg.png",
     },
   };
 

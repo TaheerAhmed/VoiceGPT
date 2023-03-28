@@ -7,6 +7,7 @@ import { useSession } from "next-auth/react";
 import React, { FormEvent, useState } from "react";
 import { db } from "@/firebase";
 import toast from "react-hot-toast";
+import Opening from "./Opening";
 type Props = {
   chatId: string;
 };
@@ -73,14 +74,16 @@ const ChatInput = ({ chatId }: Props) => {
   };
 
   return (
-    <div className="bg-gray-300/50 text-black rounded-xl text-sm justify-center content-center lg:mx-80 mb-5 ">
+    <div className="bg-gray-300/50 text-black rounded-xl text-sm justify-center content-center mx-5 mb-5 w-300">
+      
       <form
         className="p-5  flex justify-center content-center"
         onSubmit={sendMessage}
       >
         <input
-          type="text"
-          className="focus:outline-none bg-transparent flex-1  disabled:cursor-not-allowed disabled:text-gray-300 truncate"
+        type='text'
+          
+          className="focus:outline-none bg-transparent flex-1  disabled:cursor-not-allowed disabled:text-gray-300 truncate resize:none"
           placeholder="Type or use the mic to talk to the AI"
           value={prompt}
           disabled={!session}
