@@ -10,6 +10,7 @@ import { useCollection } from "react-firebase-hooks/firestore";
 import { collectionGroup } from "firebase/firestore";
 import { query } from "firebase/firestore";
 import ChatRow from "../components/ChatRow";
+import ModelSelection from "./ModelSelection";
 const SideBar = () => {
   const { data: session } = useSession();
   const [chats, loading, error] = useCollection(
@@ -25,7 +26,7 @@ const SideBar = () => {
         <div>
           {/* newchat */}
           <NewChat />
-          <div>{/* modelSelection */}</div>
+          <div><ModelSelection/></div>
 
           {/* map through the chats */}
           <div className="mt-5">
