@@ -8,6 +8,16 @@ import React, { FormEvent, useState } from "react";
 import { db } from "@/firebase";
 import toast from "react-hot-toast";
 import Opening from "./Opening";
+
+
+import { StopIcon } from '@heroicons/react/24/solid';
+import { useEffect, useRef } from 'react';
+declare global {
+  interface Window {
+    SpeechRecognition: any;
+  }
+}
+
 type Props = {
   chatId: string;
 };
@@ -73,6 +83,76 @@ const ChatInput = ({ chatId }: Props) => {
     });
   };
 
+  const SpeechToText = () => {
+
+    const [isRecording, setIsRecording] = useState(false);
+
+
+    const recognitionRef = useRef<any>();
+    const addingLines=(val:string)=>{
+      if(prompt.length==0){
+        setPrompt(val)
+      }
+      else{
+        setPrompt(prompt+" "+val)
+      }
+
+    }
+    useEffect(() => {
+      let recognition: any;
+
+      if (typeof window !== 'undefined') {
+        recognition = new (window as any).webkitSpeechRecognition();
+        recognition.continuous = true;
+        recognition.interimResults = false;
+
+        recognition.onresult = (event: any) => {
+          const transcript = event.results[event.results.length - 1][0].transcript;
+          addingLines(transcript)
+        };
+        console.log(recognition)
+
+        recognition.onend = () => {
+          setIsRecording(false);
+        };
+
+        recognitionRef.current = recognition;
+      }
+
+      return () => {
+        if (recognitionRef.current) {
+          recognitionRef.current.stop();
+        }
+      };
+    }, []);
+    
+
+    
+
+    const toggleRecording = () => {
+      if (isRecording) {
+        recognitionRef.current?.stop();
+        setIsRecording(false);
+      } else {
+        setIsRecording(true);
+        recognitionRef.current?.start();
+      }
+    };
+
+    const microphoneIcon = < MicrophoneIcon />;
+    const stopIcon = <StopIcon />;
+    const squareIcon = <StopIcon />;
+
+    return (
+      <div>
+        <div onClick={toggleRecording} className='w-5 h-5'>
+          {isRecording ? stopIcon : microphoneIcon}
+          {/* {isRecording ? squareIcon : null} */}
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div className="bg-gray-300/50 text-black rounded-xl text-sm justify-center content-center mx-5 mb-5 w-300">
       
@@ -89,11 +169,12 @@ const ChatInput = ({ chatId }: Props) => {
           disabled={!session}
           onChange={(e) => setPrompt(e.target.value)}
         />
+
         <button
           disabled={!session}
           className="bg-transparent bg-gray-300 p-2 rounded-lg disabled:cursor-not-allowed disabled:bg-gray-300 m-1 hover:bg-gray-40sss0 "
         >
-          <MicrophoneIcon className="h-4 w-4 " />
+          <SpeechToText/>
         </button>
         <button
           disabled={!prompt || !session}
