@@ -5,7 +5,7 @@ import Select from 'react-select'
 
 
 
-const fetchModel=()=>fetch('/api/getEngines').then(res=>res.json())
+const fetchModel=()=>fetch('/api/getModels').then(res=>res.json())
 
 const ModelSelection = () => {
 
