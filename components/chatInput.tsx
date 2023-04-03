@@ -75,7 +75,6 @@ const ChatInput = ({ chatId }: Props) => {
         session,
       }),
     }).then(() => {
-      console.log("yay");
       toast.success("Voice GPT is successful", {
         id: notification,
       });
@@ -154,21 +153,23 @@ const ChatInput = ({ chatId }: Props) => {
   };
 
   return (
-    <div className="bg-gray-300/50 text-black rounded-xl text-sm justify-center content-center mx-5 mb-5 w-300">
+    <div className="bg-white text-black text-sm justify-center content-center  mb-8 mr-80 ml-80 hover:border-slate-400 border   border-gray-300">
       
       <form
-        className="p-5  flex justify-center content-center"
+        className="px-2.5  flex justify-center content-center"
         onSubmit={sendMessage}
       >
         <input
         type='text'
           
-          className="focus:outline-none bg-transparent flex-1  disabled:cursor-not-allowed disabled:text-gray-300 truncate resize:none"
+          className="focus:outline-none bg-transparent  flex-1 disabled:cursor-not-allowed disabled:text-gray-300 truncate resize:none"
           placeholder="Type or use the mic to talk to the AI"
           value={prompt}
           disabled={!session}
           onChange={(e) => setPrompt(e.target.value)}
         />
+       
+
 
         <button
           disabled={!session}

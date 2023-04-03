@@ -21,7 +21,7 @@ const SideBar = () => {
       )
   );
   return (
-    <div className="p-2 flex flex-col h-screen text-white">
+    <div className="p-2 flex flex-col h-screen text-white scroll-y">
       <div className="flex-1">
         <div>
           {/* newchat */}
@@ -29,7 +29,7 @@ const SideBar = () => {
           <div><ModelSelection/></div>
 
           {/* map through the chats */}
-          <div className="mt-5">
+          <div className="mt-10  max-h-[550px] overflow-y-scroll scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
             {chats?.docs.map((chat) => (
               <ChatRow key={chat.id} id={chat.id} />
             ))}
@@ -37,8 +37,8 @@ const SideBar = () => {
         </div>
       </div>
       {session && (
-        <div className="rounded-lg bg-slate-900">
-          <div className="text-white mx-auto text-center">
+        <div className="rounded-lg bg-white text-black mb-3">
+          <div className="text-black  text-center">
             User: {session.user?.name}
           </div>
           <img
@@ -47,10 +47,10 @@ const SideBar = () => {
             className="rounded-full h-12 w-12 cursor-pointer mx-auto"
           />
           <div
-            className="border-gray-700 border  chatRow text-white"
+            className="border-gray-700  chatRow textx-black"
             onClick={() => signOut()}
           >
-            <ArrowLeftOnRectangleIcon className="h-4 w-4" />
+            <ArrowLeftOnRectangleIcon className="h-4 w-4 color-black" />
             <p>Logout</p>
           </div>
         </div>

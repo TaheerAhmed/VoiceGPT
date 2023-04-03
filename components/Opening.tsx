@@ -10,7 +10,7 @@ import styles from "./page.module.css";
 
 const Opening = () => {
     return (
-        <div className="flex text-#000000 flex-col items-center justify-center h-[70%]">
+        <div className="flex text-#000000 sm:flex-col items-center justify-center h-[70%] ">
             <h1 className="text-5xl font-bold mb-20">VoiceGPT</h1>
             <div className="flex space-x-2 text-center">
                 <div>

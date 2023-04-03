@@ -10,3 +10,22 @@
     @apply rounded-lg px-5 py-3 text-sm flex items-center justify-center space-x-2 hover:bg-gray-700/70 cursor-pointer text-gray-700 transition-all duration-200 ease-out;
   }
 }
+/* Hide scrollbar arrows */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track-piece {
+  background-color: #F7FAFC;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #CBD5E0;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-corner,
+::-webkit-scrollbar-button {
+  display: none;
+}
