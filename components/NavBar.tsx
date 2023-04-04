@@ -5,6 +5,7 @@ import '../styles/NavBar.css'
 import '../styles/Home.module.css'
 import '../styles/globals.css'
 import SideBar from './SideBar';
+import NewChat from './NewChat'
 const NavBar = () => {
     const [showSidebar, setShowSidebar] = useState(false);
 
@@ -35,17 +36,17 @@ const NavBar = () => {
                     <button onClick={handleToggleSidebar}>Open Sidebar</button>
                 </div>
                 <div className="navbar-title">
-                    <h1>My App</h1>
+                    <h1>Voice GPT</h1>
                 </div>
                 <div className="navbar-right">
-                    <button>Right Button</button>
+                    <NewChat/>
                 </div>
             </nav>
-            <div  className='side-wrapper'>
+            <div  className=''>
                 
             <div
                 className="sidebar"
-                    style={{ left: showSidebar ? 0 : "-50%" }}
+                    style={{ left: showSidebar ? 0: "-50%" }}
                 // Toggle left property
                 >
              <SideBar />
@@ -53,9 +54,12 @@ const NavBar = () => {
                     
                    
             </div>
-                <button className="close-sidebar" onClick={handleCloseSidebar} style={{ opacity: showCloseButton ? 1 : 0 }}>
-                    X
-                </button>
+               
+                
+                <div className="close-sidebar px-1  "  style={{ opacity: showCloseButton ? 1 : 0 }}>
+                    <div onClick={handleCloseSidebar} className=''>X</div>
+                </div>
+                
                 
                 
             </div>

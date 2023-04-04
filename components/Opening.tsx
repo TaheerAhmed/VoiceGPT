@@ -10,11 +10,11 @@ import styles from "./page.module.css";
 
 const Opening = () => {
     return (
-        <div className="flex text-#000000 sm:flex-col items-center justify-center h-[70%] ">
-            <h1 className="text-5xl font-bold mb-20">VoiceGPT</h1>
-            <div className="flex space-x-2 text-center">
-                <div>
-                    <div className="flex flex-col items-center justify-center">
+        <div className="flex text-#000000 flex-row sm:flex-col sm:items-center justify-center  sm:h-[70%] ">
+            <h1 className="text-5xl font-bold p-10 lg:mb-20 hidden sm:flex sm:mt-[5%]   top-[10%] left-0 right-0 ">Voice GPT</h1>
+            <div className="flex flex-col max-[640px]:mt-[10%] sm:mt-0 sm:flex-row space-x-2 text-center items-center justify-center pb-30">
+                <div className=' mt-4 sm:mt-0 h-[100%]'>
+                    <div className="flex flex-col items-center justify-center ">
                         {/* sun icon */}
                         <SunIcon className="h-6 w-6 " />
                         <h2>Capabilities</h2>
@@ -28,7 +28,7 @@ const Opening = () => {
                         <p className="infoText">"Explain the James-Webb Telescope"</p>
                     </div>
                 </div>
-                <div>
+                <div className=' mt-4 sm:mt-0 h-[100%]'>
                     <div className="flex flex-col items-center justify-center">
                         {/* sun icon */}
                         <BoltIcon className="h-6 w-6 " />
@@ -47,7 +47,7 @@ const Opening = () => {
                         </p>
                     </div>
                 </div>
-                <div>
+                <div className='mt-4 sm:mt-0 h-[100%]'>
                     <div className="flex flex-col items-center justify-center">
                         {/* sun icon */}
                         <ExclamationTriangleIcon className="h-6 w-6 " />
