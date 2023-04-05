@@ -6,11 +6,11 @@ import {
     SunIcon,
 } from "@heroicons/react/24/outline";
 import { Inter } from "next/font/google";
-import styles from "./page.module.css";
+import '../styles/Home.module.css'
 
 const Opening = () => {
     return (
-        <div className="flex text-#000000 flex-row sm:flex-col sm:items-center justify-center  sm:h-[70%] ">
+        <div className="flex text-#000000 flex-row sm:flex-col sm:items-center justify-center sm:h-[70%]  ">
             <h1 className="text-5xl font-bold p-10 lg:mb-20 hidden sm:flex sm:mt-[5%]   top-[10%] left-0 right-0 ">Voice GPT</h1>
             <div className="flex flex-col max-[640px]:mt-[10%] sm:mt-0 sm:flex-row space-x-2 text-center items-center justify-center pb-30">
                 <div className=' mt-4 sm:mt-0 h-[100%]'>
