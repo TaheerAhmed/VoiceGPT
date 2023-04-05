@@ -108,6 +108,21 @@
 .thirteen {
   position: relative;
 }
+@keyframes rotating-ring {
+  from {
+    transform: rotate(0deg);
+    border-color: transparent;
+  }
+  to {
+    transform: rotate(360deg);
+    border-color: blue;
+  }
+}
+
+.animate-rotating-ring {
+  animation: rotating-ring 1s linear infinite;
+}
+
 
 .thirteen {
   display: flex;

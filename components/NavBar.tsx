@@ -6,7 +6,9 @@ import '../styles/Home.module.css'
 import '../styles/globals.css'
 import SideBar from './SideBar';
 import NewChat from './NewChat'
+import { useRouter } from "next/navigation";
 const NavBar = () => {
+    const router = useRouter();
     const [showSidebar, setShowSidebar] = useState(false);
 
     const handleToggleSidebar = () => {
@@ -35,7 +37,7 @@ const NavBar = () => {
                 <div className="navbar-left">
                     <button onClick={handleToggleSidebar}>Open Sidebar</button>
                 </div>
-                <div className="navbar-title">
+                <div className="navbar-title" onClick={()=>router.push('/')}>
                     <h1>Voice GPT</h1>
                 </div>
                 <div className="navbar-right">

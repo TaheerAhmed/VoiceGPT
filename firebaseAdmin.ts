@@ -1,5 +1,4 @@
-import { getApp, getApps, initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
+import {  getApps} from "firebase/app";
 import admin from "firebase-admin";
 
 const serviceAccount = JSON.parse(

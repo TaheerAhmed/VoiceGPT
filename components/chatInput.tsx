@@ -4,11 +4,11 @@ import { PaperAirplaneIcon } from "@heroicons/react/24/outline";
 import { MicrophoneIcon } from "@heroicons/react/24/solid";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { useSession } from "next-auth/react";
-import React, { FormEvent, useState } from "react";
+import  { FormEvent, useState } from "react";
 import { db } from "@/firebase";
 import toast from "react-hot-toast";
-import Opening from "./Opening";
 
+import '../styles/Home.module.css'
 
 import { StopIcon } from '@heroicons/react/24/solid';
 import { useEffect, useRef } from 'react';
@@ -139,7 +139,7 @@ const ChatInput = ({ chatId }: Props) => {
     };
 
     const microphoneIcon = < MicrophoneIcon />;
-    const stopIcon = <StopIcon />;
+    const stopIcon = <div className="animate-pulse ring"><StopIcon /></div>;
     const squareIcon = <StopIcon />;
 
     return (
