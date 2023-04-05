@@ -19,11 +19,11 @@ const Opening = () => {
                     </div>
                     <div className="space-y-2">
                         <p className="infoText">
-                            "Explain Why Developers are not going to loose jobs to AI"
+                            &#34;quoted&#34;Explain Why Developers are not going to loose jobs to AI&#34;quoted&#34;
                         </p>
-                        <p className="infoText">"Some Great AI startup Ideas"</p>
+                        <p className="infoText">&#34;quoted&#34;Some Great AI startup Ideas&#34;quoted&#34;</p>
 
-                        <p className="infoText">"Explain the James-Webb Telescope"</p>
+                        <p className="infoText">&#34;quoted&#34;Explain the James-Webb Telescope&#34;quoted&#34;</p>
                     </div>
                 </div>
                 <div className=' mt-4 sm:mt-0 h-[100%]'>
