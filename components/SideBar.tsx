@@ -3,17 +3,15 @@
 import { useSession, signOut } from "next-auth/react";
 import { collection, orderBy } from "firebase/firestore";
 import { db } from "@/firebase";
-import React from "react";
 import NewChat from "./NewChat";
 import { ArrowLeftOnRectangleIcon } from "@heroicons/react/24/solid";
 import { useCollection } from "react-firebase-hooks/firestore";
-import { collectionGroup } from "firebase/firestore";
 import { query } from "firebase/firestore";
 import ChatRow from "../components/ChatRow";
 import ModelSelection from "./ModelSelection";
 const SideBar = () => {
   const { data: session } = useSession();
-  const [chats, loading, error] = useCollection(
+  const [chats] = useCollection(
     session &&
       query(
         collection(db, "users", session?.user?.email!, "chats"),

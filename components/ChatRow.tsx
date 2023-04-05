@@ -4,7 +4,7 @@ import { deleteDoc, query } from "firebase/firestore";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import React, { useState, useEffect } from "react";
+import  { useState, useEffect } from "react";
 import { useCollection } from "react-firebase-hooks/firestore";
 import { db } from "@/firebase";
 import { collection } from "firebase/firestore";

@@ -1,11 +1,9 @@
-import React from 'react'
-import Image from "next/image";
+
 import {
     BoltIcon,
     ExclamationTriangleIcon,
     SunIcon,
 } from "@heroicons/react/24/outline";
-import { Inter } from "next/font/google";
 import '../styles/Home.module.css'
 
 const Opening = () => {

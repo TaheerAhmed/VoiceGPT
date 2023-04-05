@@ -2,7 +2,6 @@
 import { db } from "@/firebase";
 import { collection, orderBy, query } from "firebase/firestore";
 import { useSession } from "next-auth/react";
-import React from "react";
 import { useCollection } from "react-firebase-hooks/firestore";
 import Message from "./Message";
 import Opening from "./Opening";

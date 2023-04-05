@@ -1,6 +1,5 @@
 import { DocumentData } from 'firebase/firestore'
-import { type } from 'os'
-import React from 'react'
+
 
 
 type Props = {

@@ -4,10 +4,10 @@ import { PaperAirplaneIcon } from "@heroicons/react/24/outline";
 import { MicrophoneIcon } from "@heroicons/react/24/solid";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { useSession } from "next-auth/react";
-import React, { FormEvent, useState } from "react";
+import  { FormEvent, useState } from "react";
 import { db } from "@/firebase";
 import toast from "react-hot-toast";
-import Opening from "./Opening";
+
 
 
 import { StopIcon } from '@heroicons/react/24/solid';
