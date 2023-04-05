@@ -114,6 +114,10 @@ const ChatInput = ({ chatId }: Props) => {
         recognition.onend = () => {
           setIsRecording(false);
         };
+        recognition.onaudioend = () => {
+          recognition.stop();
+          setIsRecording(false);
+        };
 
         recognitionRef.current = recognition;
       }

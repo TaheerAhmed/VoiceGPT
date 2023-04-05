@@ -3,6 +3,7 @@
 import { useSession, signOut } from "next-auth/react";
 import { collection, orderBy } from "firebase/firestore";
 import { db } from "@/firebase";
+import Image from "next/image";
 import NewChat from "./NewChat";
 import { ArrowLeftOnRectangleIcon } from "@heroicons/react/24/solid";
 import { useCollection } from "react-firebase-hooks/firestore";
@@ -24,7 +25,9 @@ const SideBar = () => {
         <div>
           {/* newchat */}
           <NewChat />
-          <div><ModelSelection/></div>
+          <div className="m-1">
+            Select an AI Model
+            <ModelSelection/></div>
 
           {/* map through the chats */}
           <div className="mt-10  max-h-[550px] overflow-y-scroll scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
@@ -39,8 +42,10 @@ const SideBar = () => {
           <div className="text-black  text-center">
             User: {session.user?.name}
           </div>
-          <img
+          <Image
             src={session.user?.image!}
+            width={32}
+            height={32}
             alt="profile pic"
             className="rounded-full h-12 w-12 cursor-pointer mx-auto"
           />
