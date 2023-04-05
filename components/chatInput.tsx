@@ -153,7 +153,7 @@ const ChatInput = ({ chatId }: Props) => {
   };
 
   return (
-    <div className="bg-white text-black text-sm justify-center content-center  mx-[2%] sm:mx-[5%]  mb-8 lg:mr-[25%] lg:ml-[25%] hover:border-slate-400 border   border-gray-300">
+    <div className="bg-white text-black text-sm justify-center content-center  mx-[2%] sm:mx-[5%]  my-8 lg:mr-[25%] lg:ml-[25%] hover:border-slate-400 border   border-gray-300">
       
       <form
         className="px-2.5  flex justify-center content-center"
