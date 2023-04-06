@@ -29,6 +29,7 @@ export default async function handler(
     user: {
       _id: "VoiceGPT",
       name: "VoiceGPT",
+      model:"VoiceGPT",
       avatar:
         "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/1024px-ChatGPT_logo.svg.png",
     },
