@@ -7,7 +7,7 @@ import Login from "@/components/Login";
 import ClientProvider from "@/components/ClientProvider";
 import NavBar from "@/components/NavBar";
 export const metadata = {
-  title: "ChatGPT Voice Enabled",
+  title: "Voice GPT",
   description: "Created By Mohammed Taheer Ahmed",
 };
 
