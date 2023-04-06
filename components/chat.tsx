@@ -38,7 +38,7 @@ const Chat = ({ chatId }: Props) => {
 ))}</div>):(<>
           <div className=' items-center justify-center  sm:hidden mx-[15%] md:mx-[40%] m-3 border-2 p-1 bg-gray-200 border-gray-300 text-black text-left text-xs z-0'>
             Select a Model <ModelSelection /></div>
-<Opening/>
+          <Opening showTrue={true} />
           </>)}
 
 </div>

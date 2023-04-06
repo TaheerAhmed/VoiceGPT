@@ -6,12 +6,16 @@ import {
 } from "@heroicons/react/24/outline";
 import '../styles/Home.module.css'
 import ModelSelection from "./ModelSelection";
-const Opening = () => {
+type Props = {
+    showTrue: boolean
+};
+const Opening = ({ showTrue }: Props) => {
+    console.log(showTrue)
     return (
         <div className="flex text-#000000 flex-row sm:flex-col sm:items-center justify-center sm:h-[70%]  ">
             <h1 className="text-5xl font-bold p-10 hidden sm:flex sm:mt-[0%]  md:top-[10%] left-0 right-0 ">Voice GPT</h1>
-            <div className=' items-center justify-center hidden sm:block mx-[2%] w-[300px]   border-2 p-1 bg-gray-200 border-gray-300 text-black text-left text-xs z-0'>
-                Select a Model <ModelSelection /></div>
+            {showTrue&& <div className=' items-center justify-center hidden sm:block mx-[2%] w-[300px]   border-2 p-1 bg-gray-200 border-gray-300 text-black text-left text-xs z-0'>
+                Select a Model <ModelSelection /></div>}
             <div className="flex flex-col max-[640px]:mt-[10%] sm:mt-0 sm:flex-row space-x-2 text-center items-center justify-center pb-30">
                 <div className='mt-4 sm:mt-0 h-[100%]'>
                     <div className="flex flex-col items-center justify-center">
