@@ -79,8 +79,10 @@
   border:white 1px ;
   cursor: pointer;
   position: absolute;
+  border: azure 2px solid;
   top: 1%;
-  right: 45%;
+  padding-right: 5px;
+  right: 44%;
   transition-delay: 0.2s; /* Delay button disappearance */
   transition: opacity 0.2s ease-out; /* Animate opacity changes */
 }
