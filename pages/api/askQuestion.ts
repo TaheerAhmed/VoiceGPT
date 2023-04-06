@@ -11,6 +11,7 @@ export default async function handler(
   res: NextApiResponse<Data>
 ) {
   const { prompt, chatId, model, session } = req.body;
+  
 
   if (!prompt) {
     res.status(400).json({ answer: "Please provide a prompt" });
@@ -29,6 +30,7 @@ export default async function handler(
     user: {
       _id: "VoiceGPT",
       name: "VoiceGPT",
+      model:model,
       avatar:
         "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/1024px-ChatGPT_logo.svg.png",
     },

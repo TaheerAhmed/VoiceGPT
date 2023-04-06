@@ -4,6 +4,7 @@ import React,{useEffect,useState} from 'react'
 import '../styles/NavBar.css'
 import '../styles/Home.module.css'
 import '../styles/globals.css'
+import { Bars3Icon } from '@heroicons/react/24/solid'
 import SideBar from './SideBar';
 import NewChat from './NewChat'
 import { useRouter } from "next/navigation";
@@ -35,12 +36,12 @@ const NavBar = () => {
         <>
             <nav className="navbar">
                 <div className="navbar-left">
-                    <button onClick={handleToggleSidebar}>Open Sidebar</button>
+                    <div onClick={handleToggleSidebar} className='border  hover:border-white hover:border-2 rounded-lg'><Bars3Icon width={40} height={40}/></div>
                 </div>
-                <div className="navbar-title" onClick={()=>router.push('/')}>
+                <div className="navbar-title" onClick={()=>{router.push('/')}}>
                     <h1>Voice GPT</h1>
                 </div>
-                <div className="navbar-right">
+                <div className="navbar-right ">
                     <NewChat/>
                 </div>
             </nav>

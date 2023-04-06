@@ -7,7 +7,7 @@ import { useSession } from "next-auth/react";
 import  { FormEvent, useState } from "react";
 import { db } from "@/firebase";
 import toast from "react-hot-toast";
-
+import useSWR from 'swr';
 import '../styles/Home.module.css'
 
 import { StopIcon } from '@heroicons/react/24/solid';
@@ -25,9 +25,9 @@ type Props = {
 //use swr to get model
 
 const ChatInput = ({ chatId }: Props) => {
+  const { data: model} = useSWR('model', { fallbackData: 'text-davinci-003' })
   const [prompt, setPrompt] = useState("");
   const { data: session } = useSession();
-  const model = "text-davinci-003";
 
   const sendMessage = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -46,6 +46,7 @@ const ChatInput = ({ chatId }: Props) => {
         avatar:
           session?.user?.image! ||
           `https://ui-avatars.com/api/?name=${session?.user?.name}`,
+          model:model,
       },
     };
     await addDoc(
@@ -75,6 +76,7 @@ const ChatInput = ({ chatId }: Props) => {
         session,
       }),
     }).then(() => {
+      
       toast.success("Voice GPT is successful", {
         id: notification,
       });
@@ -109,7 +111,6 @@ const ChatInput = ({ chatId }: Props) => {
           const transcript = event.results[event.results.length - 1][0].transcript;
           addingLines(transcript)
         };
-        console.log(recognition)
 
         recognition.onend = () => {
           setIsRecording(false);

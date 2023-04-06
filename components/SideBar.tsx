@@ -10,6 +10,7 @@ import { useCollection } from "react-firebase-hooks/firestore";
 import { query } from "firebase/firestore";
 import ChatRow from "../components/ChatRow";
 import ModelSelection from "./ModelSelection";
+import Upgrade from "./Upgrade";
 const SideBar = () => {
   const { data: session } = useSession();
   const [chats] = useCollection(
@@ -20,21 +21,23 @@ const SideBar = () => {
       )
   );
   return (
-    <div className="p-2 flex flex-col h-screen text-white scroll-y">
-      <div className="flex-1">
-        <div>
-          {/* newchat */}
-          <NewChat />
-          <div className="m-1">
-            Select an AI Model
-            <ModelSelection/></div>
+    <div className="p-2 flex flex-col h-screen text-white scroll-y z-40">
+      <div className="flex-1 flex flex-col">
+        <div className="flex-grow">
+          <div>
+            {/* newchat */}
+            <NewChat />
 
-          {/* map through the chats */}
-          <div className="mt-10  max-h-[550px] overflow-y-scroll scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
-            {chats?.docs.map((chat) => (
-              <ChatRow key={chat.id} id={chat.id} />
-            ))}
+            {/* map through the chats */}
+            <div className="mt-3 max-h-[500px] overflow-y-scroll scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
+              {chats?.docs.map((chat) => (
+                <ChatRow key={chat.id} id={chat.id} />
+              ))}
+            </div>
           </div>
+        </div>
+        <div className="flex-shrink m-1">
+          <Upgrade />
         </div>
       </div>
       {session && (
@@ -50,7 +53,7 @@ const SideBar = () => {
             className="rounded-full h-12 w-12 cursor-pointer mx-auto"
           />
           <div
-            className="border-gray-700  chatRow textx-black"
+            className="border-gray-700  chatRow text-black"
             onClick={() => signOut()}
           >
             <ArrowLeftOnRectangleIcon className="h-4 w-4 color-black" />

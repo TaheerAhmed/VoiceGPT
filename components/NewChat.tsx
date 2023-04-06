@@ -25,7 +25,7 @@ const NewChat = () => {
 
   return (
     <div
-      className="border-gray-700 border  chatRow text-white"
+      className="border chatRow text-white hover:border-2 rounded-lg"
       onClick={createNewChat}
     >
       <PlusIcon className="h-4 w-4" />
