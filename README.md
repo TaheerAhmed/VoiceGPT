@@ -1,7 +1,7 @@
 <h1>Voice GPT</h1>
 
 <h3>Video Demo<h3/>
-Check out this video demo to see Voice GPT in action:
+Check out this video demo to see Voice GPT in action:(this video has audio soo turn it on)
 
 https://user-images.githubusercontent.com/85991537/230696344-0a7d6a95-b4be-48e6-bca9-821fa5b62976.mp4
 
