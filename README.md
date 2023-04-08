@@ -1,38 +1,60 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1>Voice GPT</h1>
 
-## Getting Started
+<h3>Video Demo<h3/>
+Check out this video demo to see Voice GPT in action:(this video has audio soo turn it on)
 
-First, run the development server:
+https://user-images.githubusercontent.com/85991537/230696344-0a7d6a95-b4be-48e6-bca9-821fa5b62976.mp4
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+<h3>Description</h3>
+<p>Voice GPT is a cutting-edge application that leverages the power of GPT (Generative Pre-trained Transformer) technology to provide users with a next-level voice-powered conversational experience. It is a voice-enabled version of ChatGPT, designed to recognize and respond to voice commands and provide customized responses in real-time.</p>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<p>Voice GPT is perfect for people who want to have a natural and intuitive conversation with a virtual assistant without typing a single word. With Voice GPT, you can ask for directions, book a table at a restaurant, or even make a reservation at a hotel, all by simply speaking out loud. Voice GPT takes care of the rest, providing you with accurate and relevant responses.</p>
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+<h3>Features</h3>
+  <h5>Voice-Enabled</h5>: Unlike ChatGPT, Voice GPT allows users to use voice input to communicate with the application.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+<h5>Custom Responses</h5>: Voice GPT provides users with customized responses that are tailored to their specific needs.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+  <h5>Multi-Lingual</h5>: Voice GPT supports multiple languages, making it accessible to users around the world.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+  <h5>Contextual Awareness</h5>: Voice GPT uses context-awareness to understand the meaning behind users' requests and provide relevant responses.
 
-## Learn More
+  <h5>Secure and Private</h5>: Voice GPT uses industry-standard security measures to protect users' data and privacy.
 
-To learn more about Next.js, take a look at the following resources:
+  <h3>Tech Stack</h3>
+Voice GPT is built using a range of cutting-edge technologies, including:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+  <h5>OpenAI API:</h5> The OpenAI API offers a powerful set of tools for building cutting-edge AI-powered applications, including natural language processing, computer vision, and more, with state-of-the-art pre-trained models and advanced customization options.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+  <h5>NextJS:</h5> Voice GPT is built using Next.js offers server-side rendering, static site generation, automatic code splitting, hot module replacement, file system routing, built-in CSS support, API routes, and TypeScript support, making it a versatile and powerful framework for building modern web applications
 
-## Deploy on Vercel
+  <h5>React: </h5>The front-end of the application is built using React(Next.js), a powerful and popular modern JavaScript library for building user interfaces.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+  <h5>Firebase:</h5> Firebase offers a comprehensive suite of tools and services for building scalable and secure mobile and web applications with real-time data synchronization, serverless functions, authentication, and more.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+  <h5>Web Speech API:</h5> Web Speech API's WebkitSpeechRecognition enables developers to add voice recognition capabilities to their web applications, providing a more natural and intuitive user experience that can be used for a variety of applications, such as voice commands, dictation, and transcription.
+
+Getting Started
+To get started with Voice GPT, and try on your device follow the instructions below.
+
+clone the github repo 
+
+install all dependencies using npm run dev 
+
+create a env.local file in the root directory
+
+You will need to know how to set up a Firebase DB before moving ahaed 
+
+You will need to create a Firebase Database and update the detials of the database in the env.local file 
+You will need a firebase_apikey, and update the firebase.ts file with your own firebaseConfig before moving forward
+You will need to get firebaseAdmin_service_account_key and add this in the en.local file
+For Google Authentication You need to get a GOOGLE_ID and GOOGLE_SECRET and add these values inot the env.local file 
+
+Setting up openai api key 
+Get The openai api key and add the same as OPEN_AI_KEY in env.local file 
+
+search process.env and see if the env variables in the env.local are having the same name as the process.env... are having and then head to the next step
+
+after adding all the env varuables run the application
+run 
+`npm run dev`
